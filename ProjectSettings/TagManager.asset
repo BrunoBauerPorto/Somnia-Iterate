@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Coruja1
+  - Pickup
+  - TakeIten
+  - Empurravel
+  - Coruja2
+  - Coruja3
+  - Cabinet
+  - Door
+  - checkGolden
+  - checkSilver
+  - checkBlack
+  - floor
+  - Liquid1
+  - Liquid2
+  - Liquid3
+  - BallRed
+  - BallGreen
+  - BallOrange
+  - hide
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - Wall
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  m_RenderingLayers:
+  - Default
