@@ -211,7 +211,7 @@ public class Luna_Basic : MonoBehaviour
 
         if (onPushPull == true || animLuna.GetBool("Crawl") == true)
         {
-            velocity = 0.5f;
+            velocity = 1f;
         }
         else if (animLuna.GetBool("Walk")) { velocity = 3; }
 

@@ -38,9 +38,7 @@ public class Dialogue : MonoBehaviour
         button.interactable = false;
         LeanTween.init();
         animator.enabled = true;
-        lunaAnimator.SetBool("Walk", false);
-        lunaAnimator.SetBool("Hiding", false);
-        lunaAnimator.SetBool("Crawl", false);
+        
         
 
         // Configura o primeiro diálogo
@@ -82,20 +80,23 @@ public class Dialogue : MonoBehaviour
 
     public void buttonClick()
     {
-        // Evita clicar durante a digitação
-        if (isTyping) return;
+        // Se ainda estiver digitando, apenas completa o texto
+        if (isTyping)
+        {
+            StopAllCoroutines();
+            TMPro.maxVisibleCharacters = TMPro.text.Length;
+            isTyping = false;
+            button.interactable = true;
+            return;
+        }
 
-        buttonWasClicked = true;
-
-        // Verifica se ainda há falas disponíveis
+        // Agora sim, avança o diálogo
         if (index + 1 >= Textos.Length)
         {
-            // Fim do diálogo
             EndDialogue();
             return;
         }
 
-        // Avança a fala
         index++;
 
         TMPro.maxVisibleCharacters = 0;
