@@ -20,17 +20,15 @@ public class AnimTakeControl : MonoBehaviour
         public void TakingItem()
     {
         isTaking = true;
+
     }
 
-    public void DestroyParticle()
-    {
-        Destroy(Luna_Basic.pickItem.gameObject.GetComponent<ParticleSystem>());
-    }
+    
 
     public void EndTaking()
     {
         isTaking = false;
-        Destroy(Luna_Basic.pickItem.gameObject, 1f);
+        Destroy(Luna_Basic.pickItem.gameObject, 0.5f);
         if (Inventory.bear == true)
         {
             bearHold.SetActive(true);

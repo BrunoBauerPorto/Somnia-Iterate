@@ -207,14 +207,13 @@ public class Luna_Basic : MonoBehaviour
         {
             velocity = 0;
         }
-        else if (AnimTakeControl.isTaking == false && animLuna.GetBool("Hiding") == false) { velocity = 3; }
-
-        if (onPushPull == true || animLuna.GetBool("Crawl") == true)
-        {
-            velocity = 1f;
+        else if (AnimTakeControl.isTaking == false && animLuna.GetBool("Hiding") == false) {
+            if (onPushPull == true || animLuna.GetBool("Crawl") == true)
+            {
+                velocity = 1f;
+            }
+            else if (animLuna.GetBool("Walk")) { velocity = 3; }
         }
-        else if (animLuna.GetBool("Walk")) { velocity = 3; }
-
     }
     void Move(float h, float v)
     {
@@ -325,6 +324,7 @@ public class Luna_Basic : MonoBehaviour
     }
     void PickupNow()
 {
+
     animLuna.SetTrigger("OnPull");
     onPushPull = true;
     heldItem = detectedItem;
@@ -412,7 +412,6 @@ public class Luna_Basic : MonoBehaviour
     }
     public void TakingAnim()
     {
-        Destroy(particle);
         takeItem = false;
         animLuna.SetTrigger("Taking");
         buttonTaking.SetActive(false);
@@ -454,6 +453,8 @@ public class Luna_Basic : MonoBehaviour
         }
 
         ItemPickup item = pickItem.GetComponent<ItemPickup>();
+        particle = item.GetComponent<ParticleSystem>();
+        particle.Stop();
 
         if (item != null)
         {
